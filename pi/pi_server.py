@@ -2,6 +2,25 @@ from twisted.internet import protocol, reactor
 from parse import *
 
 
+import serial 
+import time 
+port = serial.Serial("/dev/ttyAMA0",baudrate=115200, timeout=100.0)
+
+'''
+while True:
+    port.write("\n")
+    #time.sleep(0.0001)
+    port.write("info\n")
+
+    rcv = port.read(100)
+    print rcv 
+    #port.write("\r\nYou sent:" + repr(rcv))
+'''
+
+
+
+
+
 class Echo(protocol.Protocol):
 	def dataReceived(self, data):
  		#self.transport.write(data)
@@ -10,6 +29,19 @@ class Echo(protocol.Protocol):
  		if "ADD" in data:
  			parsed_data = parse("ADD {join_key} {device_name}",data)
  			self.transport.write("ACK")
+			#port.write("\n")
+			time.sleep(0.1)
+			expect_string = "expect "+ parsed_data['join_key']+'\n\n'
+			print expect_string
+
+			port.write(expect_string)
+			
+			port.write("rpi"+ ' " hello"')
+			#time.sleep(10)
+			#port.write("info")
+			while(1):
+				rcv = port.read(50)
+				print rcv
  		elif "NULL" in data:
  			self.transport.write("ACK")
 
