@@ -6,6 +6,14 @@ import serial
 import time 
 port = serial.Serial("/dev/ttyAMA0",baudrate=115200, timeout=100.0)
 
+
+def readlineCR(port):
+    rv = ""
+    while True:
+        ch = port.read()
+        rv += ch
+        if ch=='\r' or ch=='' or ch=='\n':
+            return rv
 '''
 while True:
     port.write("\n")
@@ -15,6 +23,19 @@ while True:
     rcv = port.read(100)
     print rcv 
     #port.write("\r\nYou sent:" + repr(rcv))
+'''
+
+'''
+import serial
+import time
+
+
+port = serial.Serial("/dev/ttyAMA0", baudrate=115200, timeout=3.0)
+
+while True:
+    port.write("\r\nSay something:")
+    rcv = readlineCR(port)
+    port.write("\r\nYou sent:" + repr(rcv))
 '''
 
 
@@ -36,12 +57,12 @@ class Echo(protocol.Protocol):
 
 			port.write(expect_string)
 			
-			port.write("rpi"+ ' " hello"')
 			#time.sleep(10)
 			#port.write("info")
-			while(1):
-				rcv = port.read(50)
-				print rcv
+			while True:
+				rcv = readlineCR(port)
+				#port.write("\r\nYou sent:" + repr(rcv))
+
  		elif "NULL" in data:
  			self.transport.write("ACK")
 
