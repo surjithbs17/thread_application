@@ -12,6 +12,7 @@ def readlineCR(port):
     while True:
         ch = port.read()
         rv += ch
+#        print ch
         if ch=='\r' or ch=='' or ch=='\n':
             return rv
 '''
@@ -61,6 +62,7 @@ class Echo(protocol.Protocol):
 			#port.write("info")
 			while True:
 				rcv = readlineCR(port)
+				print rcv
 				#port.write("\r\nYou sent:" + repr(rcv))
 
  		elif "NULL" in data:
