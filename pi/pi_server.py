@@ -57,7 +57,7 @@ class Echo(protocol.Protocol):
 			print expect_string
 
 			#port.write(expect_string)
-			new_str = "rpi  hello\r\n" 
+			new_str = "info\r\n" 
 			port.write(new_str)
 
 			
@@ -66,6 +66,8 @@ class Echo(protocol.Protocol):
 			while True:
 				rcv = readlineCR(port)
 				print rcv
+
+
 				#port.write("\r\nYou sent:" + repr(rcv))
 
  		elif "NULL" in data:
