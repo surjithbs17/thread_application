@@ -56,7 +56,10 @@ class Echo(protocol.Protocol):
 			expect_string = "expect "+ parsed_data['join_key']+'\n\n'
 			print expect_string
 
-			port.write(expect_string)
+			#port.write(expect_string)
+			new_str = "rpi  hello\r\n" 
+			port.write(new_str)
+
 			
 			#time.sleep(10)
 			#port.write("info")
