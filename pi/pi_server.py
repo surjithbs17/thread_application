@@ -67,6 +67,9 @@ class Echo(protocol.Protocol):
 				rcv = readlineCR(port)
 				print rcv
 
+				time.sleep(10)
+				port.write(new_str)
+
 
 				#port.write("\r\nYou sent:" + repr(rcv))
 
