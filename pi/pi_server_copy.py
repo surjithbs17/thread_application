@@ -11,7 +11,7 @@ class check:
 		print input
 
 def readlineCR():
-		return "MFPI Sent steering data"
+		return "MFPI:BOUND 0"
 
 port = check()
 
@@ -31,23 +31,31 @@ class Echo(protocol.Protocol):
 			time.sleep(0.1)
 			expect_string_1 = 'expect "BLBTUCB0"\n'
 			expect_string_2 = 'expect "4GBTUCB0"\n'
-			
+			reply_1 = dict()
+			reply_2 = dict()
+
 			print expect_string_1
 			print expect_string_2
 			port.write(expect_string_1)
 			while True:
 				msg_from_server = readlineCR()
-				if "Sent steering data" in msg_from_server:
-					break;
+				if "MFPI:BOUND" in msg_from_server:
+					reply_1 = parse("MFPI:BOUND {DEVICE_ID}",msg_from_server)
+					break
+
 			port.write(expect_string_2)
 			while True:
 				msg_from_server = readlineCR()
-				if "Sent steering data" in msg_from_server:
+				if "MFPI:BOUND" in msg_from_server:
+					reply_2 = parse("MFPI:BOUND {DEVICE_ID}",msg_from_server)
 					break
 
-
+			reply_string = "DEVICE 1 Paired as %s \n DEVICE 2 Paired as %s\n"%(reply_1['DEVICE_ID'],reply_2['DEVICE_ID']) 
+			
+			print reply_string
 			#have to send acquire IP command
-			self.transport.write('ACK')
+			self.transport.write(reply_string)
+
 		if 'LED' in data:
 			# ACTUATE <DEVICE_ID> <SENSORID> <ON/OFF> 
 			parsed_data = parse("LED {DEVICE_ID} {ON_OFF}",data)

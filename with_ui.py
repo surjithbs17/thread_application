@@ -48,10 +48,10 @@ def data_processor(data):
 
 class EchoClient(protocol.Protocol):
     def connectionMade(self):
-        self.factory.app.on_connection(self.transport)
+        #self.factory.app.on_connection(self.transport)
         global connection 
         connection = self.transport
-        #print connection
+        print connection
 
 
     def dataReceived(self, data):
@@ -88,14 +88,37 @@ Builder.load_string("""
             text: 'Add Device'
             on_press: root.manager.current = 'add_device'
         Button:
-            text: 'List Devices'
-            on_press: root.manager.current = 'list_device'
-        Button:
             text: 'Use Device'
             on_press: root.manager.current = 'use_device'
+        Button:
+            text: 'Configure Pi'
+            on_press: root.manager.current = 'config_device'
         
         Button:
             text: 'Quit'
+
+<ConfigureDeviceScreen>:
+    GridLayout:
+        rows:2
+        address: address
+        port: port
+        Button:
+            text: 'Configure'
+            on_press: root.config_device(address,port)
+        TextInput:
+            id: address
+            text: 'Address'
+        TextInput:
+            id: port
+            text: 'Port Number'
+        Button:
+            text: 'Back to menu'
+            on_press: root.manager.current = 'menu'
+
+
+
+
+
 <AddDeviceScreen>:
     GridLayout:
         rows:2
@@ -106,14 +129,7 @@ Builder.load_string("""
         Button:
             text: 'Back to menu'
             on_press: root.manager.current = 'menu'
-<ListDeviceScreen>:
-    GridLayout:
-        rows:2
-        Button:
-            text: 'In List device'
-        Button:
-            text: 'Back to menu'
-            on_press: root.manager.current = 'menu'
+
 <UseDeviceScreen>:
     GridLayout:
         rows:3
@@ -136,10 +152,10 @@ Builder.load_string("""
             text: 'Relay OFF'
             on_press: root.relay_off()
         Button:
-            text: 'Read Temp'
+            text: 'Read Temparature'
             on_press: root.read_temp()
         Button:
-            text: 'Read Humi'
+            text: 'Read Humidity'
             on_press: root.read_humi()        
         Button:
             text: 'Back to Device'
@@ -154,22 +170,23 @@ Builder.load_string("""
             text: 'Relay OFF'
             on_press: root.relay_off()
         Button:
-            text: 'Read Temp'
+            text: 'Read Temparature'
             on_press: root.read_temp()
         Button:
-            text: 'Read Humi'
+            text: 'Read Humidity'
             on_press: root.read_humi()
         Button:
             text: 'Back to Device'
             on_press: root.manager.current = 'use_device'
 """)
 
-application = None
-
-
-        #self.popup = Popup(title='Temperature',size_hint=(None, None), size=(256, 256),content=str(in_value), disabled=True)
-# Declare both screens
 class MenuScreen(Screen):
+    pass
+
+class ConfigureDeviceScreen(Screen):
+    def config_device(self,address,port):
+        #add_command_string = "ADD "+ join_key.text + " " + device_name.text
+        reactor.connectTCP(address.text, int(port.text), EchoFactory(self))
     pass
 
 class UseDeviceScreen(Screen):
@@ -232,8 +249,6 @@ class AddDeviceScreen(Screen):
 
 
 
-class ListDeviceScreen(Screen):
-    pass
 
 
 
@@ -243,14 +258,14 @@ class TestApp(App):
 
     def build(self):
         #root = self.setup_gui()
-        self.connect_to_server()
+        #self.connect_to_server()
         sm = ScreenManager()
         sm.add_widget(MenuScreen(name='menu'))
         sm.add_widget(UseDeviceScreen(name='use_device'))
         sm.add_widget(UseDevice_1(name='device_1'))
         sm.add_widget(UseDevice_2(name='device_2'))
         sm.add_widget(AddDeviceScreen(name='add_device'))
-        sm.add_widget(ListDeviceScreen(name='list_device'))
+        sm.add_widget(ConfigureDeviceScreen(name='config_device'))
 
         return sm
     
