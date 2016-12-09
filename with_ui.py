@@ -11,12 +11,17 @@ from kivy.uix.button import Button
 from kivy.uix.gridlayout import GridLayout
 from kivy.uix.boxlayout import BoxLayout
 from kivy.uix.textinput import TextInput
-from kivy.properties import ObjectProperty, StringProperty
+#from kivy.properties import ObjectProperty, StringProperty
 from kivy.uix.listview import ListItemButton
 from twisted.internet import reactor, protocol
 from kivy.uix.dropdown import DropDown
 from kivy.uix.button import Button
 from kivy.base import runTouchApp
+from kivy.uix.modalview import ModalView
+from kivy.uix.popup import Popup
+from kivy.properties import (StringProperty, ObjectProperty, OptionProperty,
+                             NumericProperty, ListProperty)
+
 from parse import *
 
 import pandas as pd
@@ -29,6 +34,18 @@ connection =None
 database = pd.DataFrame()
 
 
+def data_processor(data):
+    # create content and add to the popup
+    content = Button(text=data)
+    popup = Popup(content=content, auto_dismiss=False)
+
+# bind the on_press event of the button to the dismiss function
+    content.bind(on_press=popup.dismiss)
+
+# open the popup
+    popup.open()
+
+
 class EchoClient(protocol.Protocol):
     def connectionMade(self):
         self.factory.app.on_connection(self.transport)
@@ -39,7 +56,7 @@ class EchoClient(protocol.Protocol):
 
     def dataReceived(self, data):
         #self.factory.app.print_message(data)
-        print data
+        data_processor(data)
 
 
 
@@ -55,6 +72,7 @@ class EchoFactory(protocol.ClientFactory):
     def clientConnectionFailed(self, conn, reason):
         #self.app.print_message("connection failed")
         pass
+
 
 
 
@@ -81,17 +99,10 @@ Builder.load_string("""
 <AddDeviceScreen>:
     GridLayout:
         rows:2
-        join_key: join_key
-        device_name: device_name
+        
         Button:
             text: 'Add Device'
-            on_press: root.add_device_to_list(join_key,device_name)
-        TextInput:
-            id: device_name
-            text: 'device name'
-        TextInput:
-            id: join_key
-            text: 'Join key'
+            on_press: root.add_device_to_list()
         Button:
             text: 'Back to menu'
             on_press: root.manager.current = 'menu'
@@ -105,16 +116,58 @@ Builder.load_string("""
             on_press: root.manager.current = 'menu'
 <UseDeviceScreen>:
     GridLayout:
-        rows:2
+        rows:3
         Button:
-            text: 'In Use Device'
-
+            text: 'Device 1'
+            on_press: root.manager.current = 'device_1'
+        Button:
+            text: 'Device 2'
+            on_press: root.manager.current = 'device_2'
         Button:
             text: 'Back to menu'
             on_press: root.manager.current = 'menu'
+<UseDevice_1>:
+    GridLayout:
+        rows:5
+        Button:
+            text: 'Relay ON'
+            on_press: root.relay_on()
+        Button:
+            text: 'Relay OFF'
+            on_press: root.relay_off()
+        Button:
+            text: 'Read Temp'
+            on_press: root.read_temp()
+        Button:
+            text: 'Read Humi'
+            on_press: root.read_humi()        
+        Button:
+            text: 'Back to Device'
+            on_press: root.manager.current = 'use_device'
+<UseDevice_2>:
+    GridLayout:
+        rows:5
+        Button:
+            text: 'Relay ON'
+            on_press: root.relay_on()
+        Button:
+            text: 'Relay OFF'
+            on_press: root.relay_off()
+        Button:
+            text: 'Read Temp'
+            on_press: root.read_temp()
+        Button:
+            text: 'Read Humi'
+            on_press: root.read_humi()
+        Button:
+            text: 'Back to Device'
+            on_press: root.manager.current = 'use_device'
 """)
 
 application = None
+
+
+        #self.popup = Popup(title='Temperature',size_hint=(None, None), size=(256, 256),content=str(in_value), disabled=True)
 # Declare both screens
 class MenuScreen(Screen):
     pass
@@ -122,16 +175,61 @@ class MenuScreen(Screen):
 class UseDeviceScreen(Screen):
     pass
 
+
+class UseDevice_1(Screen):
+    def relay_on(self):
+        message = "ACTUATE 0 ON"
+        print connection
+        connection.write(message)
+
+    def relay_off(self):
+        message = "ACTUATE 0 OFF"
+        print connection
+        connection.write(message)
+
+    def read_temp(self):
+        message = "READ 0 TEMP"
+        print connection
+        connection.write(message)
+
+    def read_humi(self):
+        message = "READ 0 HUMI"
+        print connection
+        connection.write(message)
+
+class UseDevice_2(Screen):
+    def relay_on(self):
+        message = "ACTUATE 1 ON"
+        print connection
+        connection.write(message)
+        #temp_popup("Relay Actuated").popup.open()
+
+
+    def relay_off(self):
+        message = "ACTUATE 1 OFF"
+        print connection
+        connection.write(message)
+
+    def read_temp(self):
+        message = "READ 1 TEMP"
+        print connection
+        connection.write(message)
+
+    def read_humi(self):
+        message = "READ 1 HUMI"
+        print connection
+        connection.write(message)
+
+
+
 class AddDeviceScreen(Screen):
 
-    def add_device_to_list(self,join_key,device_name):
-        add_command_string = "ADD "+ join_key.text + " " + device_name.text
+    def add_device_to_list(self):
+        add_command_string = "ADD"
         print add_command_string 
         print connection
         connection.write(add_command_string)
-        global database 
-        database = database.append({'Device_name':device_name.text,'Join_Key': join_key.text, 'Status' : 'OFF', 'Type': 'Lamp'},ignore_index = True)
-        print database
+
 
 
 class ListDeviceScreen(Screen):
@@ -149,12 +247,15 @@ class TestApp(App):
         sm = ScreenManager()
         sm.add_widget(MenuScreen(name='menu'))
         sm.add_widget(UseDeviceScreen(name='use_device'))
+        sm.add_widget(UseDevice_1(name='device_1'))
+        sm.add_widget(UseDevice_2(name='device_2'))
         sm.add_widget(AddDeviceScreen(name='add_device'))
         sm.add_widget(ListDeviceScreen(name='list_device'))
+
         return sm
     
     def connect_to_server(self):
-        reactor.connectTCP('proxy7.yoics.net', 36634, EchoFactory(self))
+        reactor.connectTCP('127.0.0.1', 8000, EchoFactory(self))
 
     def on_connection(self, connection):
         #self.print_message("connected successfully!")
