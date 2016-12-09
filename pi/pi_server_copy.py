@@ -132,13 +132,15 @@ class Echo(protocol.Protocol):
 					print send_string
 					port.write(send_string)
 
+#MFPI:$ 2 0 0 0 0 21 1 #
 
 			while True:
-				#msg_from_server = readlineCR()
 				msg_from_server = readlineCR()
+				#msg_from_server = readlineCR()
+				print msg_from_server
 				if "MFPI" in msg_from_server:
-					msg_string = parse("MFPI:$ 2 0 0 0 0 {DATA} 0 #",msg_from_server)
-					print msg_string['DATA']
+					msg_string = parse("MFPI:$ 2 {DATA2} {DATA3} {DATA4} {DATA5} {DATA6} {DEVICE_ID} # ",msg_from_server)
+					#print msg_string['DATA']
 					to_app_reply = "Sensor Data %s \n%s"%(parsed_data['TYPE'],msg_string['DATA'])
 					print to_app_reply
 					self.transport.write(to_app_reply)
