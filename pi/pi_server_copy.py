@@ -3,24 +3,26 @@ from parse import *
 
 import serial 
 import time 
-#port = serial.Serial("/dev/ttyUSB0",baudrate=115200, timeout=100.0)
-
+port = serial.Serial("/dev/ttyUSB0",baudrate=115200, timeout=100.0)
+'''
 class check:
 	
 	def write(self,input):
 		print input
 
+
 def readlineCR():
 		return "MFPI:BOUND 0"
 
-port = check()
 
+port = check()
 '''
+
 
 def readlineCR(port):
 	rv = port.readline()
 	return rv
-'''
+
 class Echo(protocol.Protocol):
 	def dataReceived(self, data):
  		#self.transport.write(data)

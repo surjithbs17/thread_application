@@ -24,14 +24,13 @@ from kivy.properties import (StringProperty, ObjectProperty, OptionProperty,
 
 from parse import *
 
-import pandas as pd
 
 
 #A simple Client that send messages to the echo server
 from twisted.internet import reactor, protocol
 
 connection =None
-database = pd.DataFrame()
+
 
 
 def data_processor(data):
