@@ -1,8 +1,8 @@
-cmd_/home/surjith/Downloads/Linux_3.x.x_VCP_Driver_Source/cp210x.o := gcc -Wp,-MD,/home/surjith/Downloads/Linux_3.x.x_VCP_Driver_Source/.cp210x.o.d  -nostdinc -isystem /usr/lib/gcc/x86_64-linux-gnu/5/include  -I./arch/x86/include -Iarch/x86/include/generated/uapi -Iarch/x86/include/generated  -Iinclude -I./arch/x86/include/uapi -Iarch/x86/include/generated/uapi -I./include/uapi -Iinclude/generated/uapi -include ./include/linux/kconfig.h -Iubuntu/include  -D__KERNEL__ -fno-pie -Wall -Wundef -Wstrict-prototypes -Wno-trigraphs -fno-strict-aliasing -fno-common -Werror-implicit-function-declaration -Wno-format-security -std=gnu89 -fno-pie -no-pie -mno-sse -mno-mmx -mno-sse2 -mno-3dnow -mno-avx -m64 -falign-jumps=1 -falign-loops=1 -mno-80387 -mno-fp-ret-in-387 -mpreferred-stack-boundary=3 -mskip-rax-setup -mtune=generic -mno-red-zone -mcmodel=kernel -funit-at-a-time -maccumulate-outgoing-args -DCONFIG_X86_X32_ABI -DCONFIG_AS_CFI=1 -DCONFIG_AS_CFI_SIGNAL_FRAME=1 -DCONFIG_AS_CFI_SECTIONS=1 -DCONFIG_AS_FXSAVEQ=1 -DCONFIG_AS_SSSE3=1 -DCONFIG_AS_CRC32=1 -DCONFIG_AS_AVX=1 -DCONFIG_AS_AVX2=1 -DCONFIG_AS_SHA1_NI=1 -DCONFIG_AS_SHA256_NI=1 -pipe -Wno-sign-compare -fno-asynchronous-unwind-tables -fno-delete-null-pointer-checks -Wno-maybe-uninitialized -O2 --param=allow-store-data-races=0 -Wframe-larger-than=1024 -fstack-protector-strong -Wno-unused-but-set-variable -fno-omit-frame-pointer -fno-optimize-sibling-calls -fno-var-tracking-assignments -pg -mfentry -DCC_USING_FENTRY -Wdeclaration-after-statement -Wno-pointer-sign -fno-strict-overflow -fconserve-stack -Werror=implicit-int -Werror=strict-prototypes -Werror=date-time -DCC_HAVE_ASM_GOTO  -DMODULE  -D"KBUILD_STR(s)=\#s" -D"KBUILD_BASENAME=KBUILD_STR(cp210x)"  -D"KBUILD_MODNAME=KBUILD_STR(cp210x)" -c -o /home/surjith/Downloads/Linux_3.x.x_VCP_Driver_Source/.tmp_cp210x.o /home/surjith/Downloads/Linux_3.x.x_VCP_Driver_Source/cp210x.c
+cmd_/home/pi/LPEDT/thread_application/Linux_3.x.x_VCP_Driver_Source/cp210x.o := gcc -Wp,-MD,/home/pi/LPEDT/thread_application/Linux_3.x.x_VCP_Driver_Source/.cp210x.o.d  -nostdinc -isystem /usr/lib/gcc/arm-linux-gnueabihf/4.9/include -I./arch/arm/include -Iarch/arm/include/generated/uapi -Iarch/arm/include/generated  -Iinclude -I./arch/arm/include/uapi -Iarch/arm/include/generated/uapi -I./include/uapi -Iinclude/generated/uapi -include ./include/linux/kconfig.h -D__KERNEL__ -mlittle-endian -Iarch/arm/mach-bcm2709/include -Wall -Wundef -Wstrict-prototypes -Wno-trigraphs -fno-strict-aliasing -fno-common -Werror-implicit-function-declaration -Wno-format-security -std=gnu89 -fno-PIE -fno-dwarf2-cfi-asm -fno-omit-frame-pointer -mapcs -mno-sched-prolog -fno-ipa-sra -mabi=aapcs-linux -mno-thumb-interwork -mfpu=vfp -funwind-tables -marm -D__LINUX_ARM_ARCH__=7 -march=armv7-a -msoft-float -Uarm -fno-delete-null-pointer-checks -Wno-maybe-uninitialized -O2 --param=allow-store-data-races=0 -Wframe-larger-than=1024 -fno-stack-protector -Wno-unused-but-set-variable -fno-omit-frame-pointer -fno-optimize-sibling-calls -fno-var-tracking-assignments -pg -Wdeclaration-after-statement -Wno-pointer-sign -fno-strict-overflow -fconserve-stack -Werror=implicit-int -Werror=strict-prototypes -Werror=date-time -DCC_HAVE_ASM_GOTO  -DMODULE  -D"KBUILD_STR(s)=\#s" -D"KBUILD_BASENAME=KBUILD_STR(cp210x)"  -D"KBUILD_MODNAME=KBUILD_STR(cp210x)" -c -o /home/pi/LPEDT/thread_application/Linux_3.x.x_VCP_Driver_Source/.tmp_cp210x.o /home/pi/LPEDT/thread_application/Linux_3.x.x_VCP_Driver_Source/cp210x.c
 
-source_/home/surjith/Downloads/Linux_3.x.x_VCP_Driver_Source/cp210x.o := /home/surjith/Downloads/Linux_3.x.x_VCP_Driver_Source/cp210x.c
+source_/home/pi/LPEDT/thread_application/Linux_3.x.x_VCP_Driver_Source/cp210x.o := /home/pi/LPEDT/thread_application/Linux_3.x.x_VCP_Driver_Source/cp210x.c
 
-deps_/home/surjith/Downloads/Linux_3.x.x_VCP_Driver_Source/cp210x.o := \
+deps_/home/pi/LPEDT/thread_application/Linux_3.x.x_VCP_Driver_Source/cp210x.o := \
   include/linux/kernel.h \
     $(wildcard include/config/lbdaf.h) \
     $(wildcard include/config/preempt/voluntary.h) \
@@ -12,7 +12,7 @@ deps_/home/surjith/Downloads/Linux_3.x.x_VCP_Driver_Source/cp210x.o := \
     $(wildcard include/config/panic/timeout.h) \
     $(wildcard include/config/tracing.h) \
     $(wildcard include/config/ftrace/mcount/record.h) \
-  /usr/lib/gcc/x86_64-linux-gnu/5/include/stdarg.h \
+  /usr/lib/gcc/arm-linux-gnueabihf/4.9/include/stdarg.h \
   include/linux/linkage.h \
   include/linux/compiler.h \
     $(wildcard include/config/sparse/rcu/pointer.h) \
@@ -28,20 +28,17 @@ deps_/home/surjith/Downloads/Linux_3.x.x_VCP_Driver_Source/cp210x.o := \
     $(wildcard include/config/gcov/kernel.h) \
     $(wildcard include/config/arch/use/builtin/bswap.h) \
   include/uapi/linux/types.h \
-  arch/x86/include/uapi/asm/types.h \
-  include/uapi/asm-generic/types.h \
+  arch/arm/include/asm/types.h \
   include/asm-generic/int-ll64.h \
   include/uapi/asm-generic/int-ll64.h \
-  arch/x86/include/uapi/asm/bitsperlong.h \
+  arch/arm/include/generated/asm/bitsperlong.h \
   include/asm-generic/bitsperlong.h \
     $(wildcard include/config/64bit.h) \
   include/uapi/asm-generic/bitsperlong.h \
   include/uapi/linux/posix_types.h \
   include/linux/stddef.h \
   include/uapi/linux/stddef.h \
-  arch/x86/include/asm/posix_types.h \
-    $(wildcard include/config/x86/32.h) \
-  arch/x86/include/uapi/asm/posix_types_64.h \
+  arch/arm/include/uapi/asm/posix_types.h \
   include/uapi/asm-generic/posix_types.h \
   include/linux/stringify.h \
   include/linux/export.h \
@@ -49,99 +46,58 @@ deps_/home/surjith/Downloads/Linux_3.x.x_VCP_Driver_Source/cp210x.o := \
     $(wildcard include/config/modules.h) \
     $(wildcard include/config/modversions.h) \
     $(wildcard include/config/unused/symbols.h) \
-  arch/x86/include/asm/linkage.h \
-    $(wildcard include/config/x86/64.h) \
-    $(wildcard include/config/x86/alignment/16.h) \
+  arch/arm/include/asm/linkage.h \
   include/linux/types.h \
     $(wildcard include/config/have/uid16.h) \
     $(wildcard include/config/uid16.h) \
     $(wildcard include/config/arch/dma/addr/t/64bit.h) \
     $(wildcard include/config/phys/addr/t/64bit.h) \
   include/linux/bitops.h \
-  arch/x86/include/asm/bitops.h \
-    $(wildcard include/config/x86/cmov.h) \
-  arch/x86/include/asm/alternative.h \
+  arch/arm/include/asm/bitops.h \
     $(wildcard include/config/smp.h) \
-    $(wildcard include/config/paravirt.h) \
-  arch/x86/include/asm/asm.h \
-  arch/x86/include/asm/ptrace.h \
-    $(wildcard include/config/x86/debugctlmsr.h) \
-  arch/x86/include/asm/segment.h \
-    $(wildcard include/config/cc/stackprotector.h) \
-    $(wildcard include/config/x86/32/lazy/gs.h) \
-  include/uapi/linux/const.h \
-  arch/x86/include/asm/cache.h \
-    $(wildcard include/config/x86/l1/cache/shift.h) \
-    $(wildcard include/config/x86/internode/cache/shift.h) \
-    $(wildcard include/config/x86/vsmp.h) \
-  arch/x86/include/asm/page_types.h \
-    $(wildcard include/config/physical/start.h) \
-    $(wildcard include/config/physical/align.h) \
-  arch/x86/include/asm/page_64_types.h \
-    $(wildcard include/config/randomize/base.h) \
-    $(wildcard include/config/randomize/base/max/offset.h) \
-  arch/x86/include/uapi/asm/ptrace.h \
-  arch/x86/include/uapi/asm/ptrace-abi.h \
-  arch/x86/include/asm/processor-flags.h \
-    $(wildcard include/config/vm86.h) \
-  arch/x86/include/uapi/asm/processor-flags.h \
-  arch/x86/include/asm/paravirt_types.h \
-    $(wildcard include/config/x86/local/apic.h) \
-    $(wildcard include/config/pgtable/levels.h) \
-    $(wildcard include/config/x86/pae.h) \
-    $(wildcard include/config/queued/spinlocks.h) \
-    $(wildcard include/config/paravirt/debug.h) \
-  arch/x86/include/asm/desc_defs.h \
-  arch/x86/include/asm/kmap_types.h \
-    $(wildcard include/config/debug/highmem.h) \
-  include/asm-generic/kmap_types.h \
-  arch/x86/include/asm/pgtable_types.h \
-    $(wildcard include/config/kmemcheck.h) \
-    $(wildcard include/config/mem/soft/dirty.h) \
-    $(wildcard include/config/proc/fs.h) \
-  arch/x86/include/asm/pgtable_64_types.h \
-  arch/x86/include/asm/sparsemem.h \
-    $(wildcard include/config/sparsemem.h) \
-  arch/x86/include/asm/spinlock_types.h \
-    $(wildcard include/config/paravirt/spinlocks.h) \
-    $(wildcard include/config/nr/cpus.h) \
-  include/asm-generic/qspinlock_types.h \
-  include/asm-generic/qrwlock_types.h \
-  include/asm-generic/ptrace.h \
-  arch/x86/include/asm/rmwcc.h \
-  arch/x86/include/asm/barrier.h \
-    $(wildcard include/config/x86/ppro/fence.h) \
-  arch/x86/include/asm/nops.h \
-    $(wildcard include/config/mk7.h) \
-    $(wildcard include/config/x86/p6/nop.h) \
-  include/asm-generic/barrier.h \
-  include/asm-generic/bitops/find.h \
-    $(wildcard include/config/generic/find/first/bit.h) \
+  include/linux/irqflags.h \
+    $(wildcard include/config/trace/irqflags.h) \
+    $(wildcard include/config/irqsoff/tracer.h) \
+    $(wildcard include/config/preempt/tracer.h) \
+    $(wildcard include/config/trace/irqflags/support.h) \
+  include/linux/typecheck.h \
+  arch/arm/include/asm/irqflags.h \
+    $(wildcard include/config/cpu/v7m.h) \
+  arch/arm/include/asm/ptrace.h \
+    $(wildcard include/config/arm/thumb.h) \
+    $(wildcard include/config/thumb2/kernel.h) \
+  arch/arm/include/uapi/asm/ptrace.h \
+    $(wildcard include/config/cpu/endian/be8.h) \
+  arch/arm/include/asm/hwcap.h \
+  arch/arm/include/uapi/asm/hwcap.h \
+  include/asm-generic/irqflags.h \
+  arch/arm/include/asm/barrier.h \
+    $(wildcard include/config/cpu/32v6k.h) \
+    $(wildcard include/config/cpu/xsc3.h) \
+    $(wildcard include/config/cpu/fa526.h) \
+    $(wildcard include/config/arm/heavy/mb.h) \
+    $(wildcard include/config/arch/has/barriers.h) \
+    $(wildcard include/config/arm/dma/mem/bufferable.h) \
+  include/asm-generic/bitops/non-atomic.h \
+  include/asm-generic/bitops/fls64.h \
   include/asm-generic/bitops/sched.h \
-  arch/x86/include/asm/arch_hweight.h \
-  arch/x86/include/asm/cpufeatures.h \
-  arch/x86/include/asm/required-features.h \
-    $(wildcard include/config/x86/minimum/cpu/family.h) \
-    $(wildcard include/config/math/emulation.h) \
-    $(wildcard include/config/x86/cmpxchg64.h) \
-    $(wildcard include/config/x86/use/3dnow.h) \
-    $(wildcard include/config/matom.h) \
-  arch/x86/include/asm/disabled-features.h \
-    $(wildcard include/config/x86/intel/mpx.h) \
+  include/asm-generic/bitops/hweight.h \
+  include/asm-generic/bitops/arch_hweight.h \
   include/asm-generic/bitops/const_hweight.h \
+  include/asm-generic/bitops/lock.h \
   include/asm-generic/bitops/le.h \
-  arch/x86/include/uapi/asm/byteorder.h \
+  arch/arm/include/uapi/asm/byteorder.h \
   include/linux/byteorder/little_endian.h \
   include/uapi/linux/byteorder/little_endian.h \
   include/linux/swab.h \
   include/uapi/linux/swab.h \
-  arch/x86/include/uapi/asm/swab.h \
+  arch/arm/include/asm/swab.h \
+  arch/arm/include/uapi/asm/swab.h \
   include/linux/byteorder/generic.h \
   include/asm-generic/bitops/ext2-atomic-setbit.h \
   include/linux/log2.h \
     $(wildcard include/config/arch/has/ilog2/u32.h) \
     $(wildcard include/config/arch/has/ilog2/u64.h) \
-  include/linux/typecheck.h \
   include/linux/printk.h \
     $(wildcard include/config/message/loglevel/default.h) \
     $(wildcard include/config/early/printk.h) \
@@ -155,15 +111,35 @@ deps_/home/surjith/Downloads/Linux_3.x.x_VCP_Driver_Source/cp210x.o := \
     $(wildcard include/config/arch/has/cache/line/size.h) \
   include/uapi/linux/kernel.h \
   include/uapi/linux/sysinfo.h \
+  arch/arm/include/asm/cache.h \
+    $(wildcard include/config/arm/l1/cache/shift.h) \
+    $(wildcard include/config/aeabi.h) \
   include/linux/dynamic_debug.h \
+  include/linux/string.h \
+    $(wildcard include/config/binary/printf.h) \
+  include/uapi/linux/string.h \
+  arch/arm/include/asm/string.h \
+    $(wildcard include/config/mach/bcm2708.h) \
   include/linux/errno.h \
   include/uapi/linux/errno.h \
-  arch/x86/include/uapi/asm/errno.h \
+  arch/arm/include/generated/asm/errno.h \
   include/uapi/asm-generic/errno.h \
   include/uapi/asm-generic/errno-base.h \
+  arch/arm/include/asm/div64.h \
+  arch/arm/include/asm/compiler.h \
+  arch/arm/include/asm/bug.h \
+    $(wildcard include/config/bug.h) \
+    $(wildcard include/config/debug/bugverbose.h) \
+    $(wildcard include/config/arm/lpae.h) \
+  arch/arm/include/asm/opcodes.h \
+    $(wildcard include/config/cpu/endian/be32.h) \
+  include/asm-generic/bug.h \
+    $(wildcard include/config/generic/bug.h) \
+    $(wildcard include/config/generic/bug/relative/pointers.h) \
   include/linux/slab.h \
     $(wildcard include/config/debug/slab.h) \
     $(wildcard include/config/debug/objects.h) \
+    $(wildcard include/config/kmemcheck.h) \
     $(wildcard include/config/failslab.h) \
     $(wildcard include/config/slab.h) \
     $(wildcard include/config/slub.h) \
@@ -173,7 +149,6 @@ deps_/home/surjith/Downloads/Linux_3.x.x_VCP_Driver_Source/cp210x.o := \
   include/linux/gfp.h \
     $(wildcard include/config/highmem.h) \
     $(wildcard include/config/zone/dma32.h) \
-    $(wildcard include/config/zone/device.h) \
     $(wildcard include/config/deferred/struct/page/init.h) \
     $(wildcard include/config/pm/sleep.h) \
     $(wildcard include/config/cma.h) \
@@ -181,16 +156,12 @@ deps_/home/surjith/Downloads/Linux_3.x.x_VCP_Driver_Source/cp210x.o := \
     $(wildcard include/config/debug/vm.h) \
     $(wildcard include/config/debug/virtual.h) \
   include/linux/bug.h \
-    $(wildcard include/config/generic/bug.h) \
-  arch/x86/include/asm/bug.h \
-    $(wildcard include/config/debug/bugverbose.h) \
-  include/asm-generic/bug.h \
-    $(wildcard include/config/bug.h) \
-    $(wildcard include/config/generic/bug/relative/pointers.h) \
   include/linux/mmzone.h \
     $(wildcard include/config/force/max/zoneorder.h) \
     $(wildcard include/config/memory/isolation.h) \
     $(wildcard include/config/memcg.h) \
+    $(wildcard include/config/zone/device.h) \
+    $(wildcard include/config/sparsemem.h) \
     $(wildcard include/config/memory/hotplug.h) \
     $(wildcard include/config/compaction.h) \
     $(wildcard include/config/discontigmem.h) \
@@ -217,102 +188,64 @@ deps_/home/surjith/Downloads/Linux_3.x.x_VCP_Driver_Source/cp210x.o := \
   include/linux/preempt.h \
     $(wildcard include/config/preempt/count.h) \
     $(wildcard include/config/debug/preempt.h) \
-    $(wildcard include/config/preempt/tracer.h) \
     $(wildcard include/config/preempt/notifiers.h) \
   include/linux/list.h \
     $(wildcard include/config/debug/list.h) \
   include/linux/poison.h \
     $(wildcard include/config/illegal/pointer/value.h) \
-  arch/x86/include/asm/preempt.h \
-  arch/x86/include/asm/percpu.h \
-    $(wildcard include/config/x86/64/smp.h) \
-  include/asm-generic/percpu.h \
-    $(wildcard include/config/have/setup/per/cpu/area.h) \
-  include/linux/threads.h \
-    $(wildcard include/config/base/small.h) \
-  include/linux/percpu-defs.h \
-    $(wildcard include/config/debug/force/weak/per/cpu.h) \
+  include/uapi/linux/const.h \
+  arch/arm/include/generated/asm/preempt.h \
+  include/asm-generic/preempt.h \
   include/linux/thread_info.h \
     $(wildcard include/config/compat.h) \
     $(wildcard include/config/debug/stack/usage.h) \
-  arch/x86/include/asm/thread_info.h \
-    $(wildcard include/config/ia32/emulation.h) \
-  arch/x86/include/asm/page.h \
-  arch/x86/include/asm/page_64.h \
-    $(wildcard include/config/x86/vsyscall/emulation.h) \
-  include/linux/range.h \
+  arch/arm/include/asm/thread_info.h \
+    $(wildcard include/config/crunch.h) \
+    $(wildcard include/config/arm/thumbee.h) \
+  arch/arm/include/asm/fpstate.h \
+    $(wildcard include/config/vfpv3.h) \
+    $(wildcard include/config/iwmmxt.h) \
+  arch/arm/include/asm/page.h \
+    $(wildcard include/config/cpu/copy/v4wt.h) \
+    $(wildcard include/config/cpu/copy/v4wb.h) \
+    $(wildcard include/config/cpu/copy/feroceon.h) \
+    $(wildcard include/config/cpu/copy/fa.h) \
+    $(wildcard include/config/cpu/sa1100.h) \
+    $(wildcard include/config/cpu/xscale.h) \
+    $(wildcard include/config/cpu/copy/v6.h) \
+    $(wildcard include/config/kuser/helpers.h) \
+  arch/arm/include/asm/glue.h \
+  arch/arm/include/asm/pgtable-2level-types.h \
+  arch/arm/include/asm/memory.h \
+    $(wildcard include/config/need/mach/memory/h.h) \
+    $(wildcard include/config/page/offset.h) \
+    $(wildcard include/config/dram/base.h) \
+    $(wildcard include/config/dram/size.h) \
+    $(wildcard include/config/have/tcm.h) \
+    $(wildcard include/config/arm/patch/phys/virt.h) \
+    $(wildcard include/config/phys/offset.h) \
+    $(wildcard include/config/virt/to/bus.h) \
+  include/linux/sizes.h \
+  arch/arm/mach-bcm2709/include/mach/memory.h \
+    $(wildcard include/config/bcm2708/nol2cache.h) \
   include/asm-generic/memory_model.h \
     $(wildcard include/config/sparsemem/vmemmap.h) \
   include/asm-generic/getorder.h \
-  arch/x86/include/asm/cpufeature.h \
-    $(wildcard include/config/x86/feature/names.h) \
-    $(wildcard include/config/x86/debug/static/cpu/has.h) \
-  arch/x86/include/asm/processor.h \
-    $(wildcard include/config/m486.h) \
-    $(wildcard include/config/xen.h) \
-  arch/x86/include/asm/math_emu.h \
-  arch/x86/include/uapi/asm/sigcontext.h \
-  arch/x86/include/asm/current.h \
-  arch/x86/include/asm/msr.h \
-  arch/x86/include/asm/msr-index.h \
-    $(wildcard include/config/tdp/nominal.h) \
-    $(wildcard include/config/tdp/level/1.h) \
-    $(wildcard include/config/tdp/level/2.h) \
-    $(wildcard include/config/tdp/control.h) \
-    $(wildcard include/config/tdp/level1.h) \
-    $(wildcard include/config/tdp/level2.h) \
-  arch/x86/include/asm/cpumask.h \
-  include/linux/cpumask.h \
-    $(wildcard include/config/cpumask/offstack.h) \
-    $(wildcard include/config/hotplug/cpu.h) \
-    $(wildcard include/config/debug/per/cpu/maps.h) \
-  include/linux/bitmap.h \
-  include/linux/string.h \
-    $(wildcard include/config/binary/printf.h) \
-  include/uapi/linux/string.h \
-  arch/x86/include/asm/string.h \
-  arch/x86/include/asm/string_64.h \
-  arch/x86/include/uapi/asm/msr.h \
-  include/uapi/linux/ioctl.h \
-  arch/x86/include/uapi/asm/ioctl.h \
-  include/asm-generic/ioctl.h \
-  include/uapi/asm-generic/ioctl.h \
-  arch/x86/include/asm/paravirt.h \
-  arch/x86/include/asm/special_insns.h \
-  arch/x86/include/asm/fpu/types.h \
-  include/linux/personality.h \
-  include/uapi/linux/personality.h \
-  include/linux/math64.h \
-    $(wildcard include/config/arch/supports/int128.h) \
-  arch/x86/include/asm/div64.h \
-  include/asm-generic/div64.h \
-  include/linux/err.h \
-  include/linux/irqflags.h \
-    $(wildcard include/config/trace/irqflags.h) \
-    $(wildcard include/config/irqsoff/tracer.h) \
-    $(wildcard include/config/trace/irqflags/support.h) \
-  arch/x86/include/asm/irqflags.h \
-  include/linux/atomic.h \
-    $(wildcard include/config/generic/atomic64.h) \
-  arch/x86/include/asm/atomic.h \
-  arch/x86/include/asm/cmpxchg.h \
-  arch/x86/include/asm/cmpxchg_64.h \
-  arch/x86/include/asm/atomic64_64.h \
-  include/asm-generic/atomic-long.h \
   include/linux/bottom_half.h \
   include/linux/spinlock_types.h \
+  arch/arm/include/asm/spinlock_types.h \
   include/linux/lockdep.h \
     $(wildcard include/config/lockdep.h) \
     $(wildcard include/config/lock/stat.h) \
   include/linux/rwlock_types.h \
-  arch/x86/include/asm/spinlock.h \
-  include/linux/jump_label.h \
-    $(wildcard include/config/jump/label.h) \
-  arch/x86/include/asm/jump_label.h \
-  arch/x86/include/asm/qspinlock.h \
-  include/asm-generic/qspinlock.h \
-  arch/x86/include/asm/qrwlock.h \
-  include/asm-generic/qrwlock.h \
+  arch/arm/include/asm/spinlock.h \
+  include/linux/prefetch.h \
+  arch/arm/include/asm/processor.h \
+    $(wildcard include/config/have/hw/breakpoint.h) \
+    $(wildcard include/config/arm/errata/754327.h) \
+  arch/arm/include/asm/hw_breakpoint.h \
+  arch/arm/include/asm/unified.h \
+    $(wildcard include/config/arm/asm/unified.h) \
   include/linux/rwlock.h \
   include/linux/spinlock_api_smp.h \
     $(wildcard include/config/inline/spin/lock.h) \
@@ -344,13 +277,27 @@ deps_/home/surjith/Downloads/Linux_3.x.x_VCP_Driver_Source/cp210x.o := \
     $(wildcard include/config/inline/write/unlock/irq.h) \
     $(wildcard include/config/inline/read/unlock/irqrestore.h) \
     $(wildcard include/config/inline/write/unlock/irqrestore.h) \
+  include/linux/atomic.h \
+    $(wildcard include/config/generic/atomic64.h) \
+  arch/arm/include/asm/atomic.h \
+  arch/arm/include/asm/cmpxchg.h \
+    $(wildcard include/config/cpu/sa110.h) \
+    $(wildcard include/config/cpu/v6.h) \
+  include/asm-generic/cmpxchg-local.h \
+  include/asm-generic/atomic-long.h \
   include/linux/wait.h \
+  arch/arm/include/generated/asm/current.h \
+  include/asm-generic/current.h \
   include/uapi/linux/wait.h \
+  include/linux/threads.h \
+    $(wildcard include/config/nr/cpus.h) \
+    $(wildcard include/config/base/small.h) \
   include/linux/numa.h \
     $(wildcard include/config/nodes/shift.h) \
   include/linux/seqlock.h \
   include/linux/nodemask.h \
     $(wildcard include/config/movable/node.h) \
+  include/linux/bitmap.h \
   include/linux/pageblock-flags.h \
     $(wildcard include/config/hugetlb/page.h) \
     $(wildcard include/config/hugetlb/page/size/variable.h) \
@@ -368,7 +315,8 @@ deps_/home/surjith/Downloads/Linux_3.x.x_VCP_Driver_Source/cp210x.o := \
   include/linux/rwsem.h \
     $(wildcard include/config/rwsem/spin/on/owner.h) \
     $(wildcard include/config/rwsem/generic/spinlock.h) \
-  arch/x86/include/asm/rwsem.h \
+  arch/arm/include/generated/asm/rwsem.h \
+  include/asm-generic/rwsem.h \
   include/linux/srcu.h \
   include/linux/rcupdate.h \
     $(wildcard include/config/tiny/rcu.h) \
@@ -380,29 +328,33 @@ deps_/home/surjith/Downloads/Linux_3.x.x_VCP_Driver_Source/cp210x.o := \
     $(wildcard include/config/rcu/nocb/cpu.h) \
     $(wildcard include/config/tasks/rcu.h) \
     $(wildcard include/config/debug/objects/rcu/head.h) \
+    $(wildcard include/config/hotplug/cpu.h) \
     $(wildcard include/config/prove/rcu.h) \
     $(wildcard include/config/rcu/boost.h) \
     $(wildcard include/config/rcu/nocb/cpu/all.h) \
     $(wildcard include/config/no/hz/full/sysidle.h) \
+  include/linux/cpumask.h \
+    $(wildcard include/config/cpumask/offstack.h) \
+    $(wildcard include/config/debug/per/cpu/maps.h) \
   include/linux/completion.h \
   include/linux/debugobjects.h \
     $(wildcard include/config/debug/objects/free.h) \
   include/linux/ktime.h \
   include/linux/time.h \
     $(wildcard include/config/arch/uses/gettimeoffset.h) \
+  include/linux/math64.h \
+    $(wildcard include/config/arch/supports/int128.h) \
   include/linux/time64.h \
   include/uapi/linux/time.h \
   include/linux/jiffies.h \
   include/linux/timex.h \
   include/uapi/linux/timex.h \
   include/uapi/linux/param.h \
-  arch/x86/include/uapi/asm/param.h \
+  arch/arm/include/generated/asm/param.h \
   include/asm-generic/param.h \
     $(wildcard include/config/hz.h) \
   include/uapi/asm-generic/param.h \
-  arch/x86/include/asm/timex.h \
-  arch/x86/include/asm/tsc.h \
-    $(wildcard include/config/x86/tsc.h) \
+  arch/arm/include/asm/timex.h \
   include/generated/timeconst.h \
   include/linux/timekeeping.h \
   include/linux/rcutree.h \
@@ -418,97 +370,6 @@ deps_/home/surjith/Downloads/Linux_3.x.x_VCP_Driver_Source/cp210x.o := \
     $(wildcard include/config/sysctl.h) \
   include/linux/rbtree.h \
   include/uapi/linux/sysctl.h \
-  arch/x86/include/asm/mmzone.h \
-  arch/x86/include/asm/mmzone_64.h \
-  arch/x86/include/asm/smp.h \
-    $(wildcard include/config/x86/io/apic.h) \
-    $(wildcard include/config/x86/32/smp.h) \
-    $(wildcard include/config/debug/nmi/selftest.h) \
-  arch/x86/include/asm/mpspec.h \
-    $(wildcard include/config/eisa.h) \
-    $(wildcard include/config/x86/mpparse.h) \
-  arch/x86/include/asm/mpspec_def.h \
-  arch/x86/include/asm/x86_init.h \
-  arch/x86/include/uapi/asm/bootparam.h \
-  include/linux/screen_info.h \
-  include/uapi/linux/screen_info.h \
-  include/linux/apm_bios.h \
-  include/uapi/linux/apm_bios.h \
-  include/linux/edd.h \
-  include/uapi/linux/edd.h \
-  arch/x86/include/asm/e820.h \
-    $(wildcard include/config/efi.h) \
-    $(wildcard include/config/hibernation.h) \
-  arch/x86/include/uapi/asm/e820.h \
-    $(wildcard include/config/x86/pmem/legacy.h) \
-    $(wildcard include/config/intel/txt.h) \
-  include/linux/ioport.h \
-  arch/x86/include/asm/ist.h \
-  arch/x86/include/uapi/asm/ist.h \
-  include/video/edid.h \
-    $(wildcard include/config/x86.h) \
-  include/uapi/video/edid.h \
-  arch/x86/include/asm/apicdef.h \
-  arch/x86/include/asm/apic.h \
-    $(wildcard include/config/x86/x2apic.h) \
-  include/linux/pm.h \
-    $(wildcard include/config/vt/console/sleep.h) \
-    $(wildcard include/config/pm.h) \
-    $(wildcard include/config/pm/clk.h) \
-    $(wildcard include/config/pm/generic/domains.h) \
-  arch/x86/include/asm/fixmap.h \
-    $(wildcard include/config/paravirt/clock.h) \
-    $(wildcard include/config/provide/ohci1394/dma/init.h) \
-    $(wildcard include/config/pci/mmconfig.h) \
-    $(wildcard include/config/x86/intel/mid.h) \
-  arch/x86/include/asm/acpi.h \
-    $(wildcard include/config/acpi/apei.h) \
-    $(wildcard include/config/acpi.h) \
-    $(wildcard include/config/acpi/numa.h) \
-  include/acpi/pdc_intel.h \
-  arch/x86/include/asm/numa.h \
-    $(wildcard include/config/numa/emu.h) \
-  arch/x86/include/asm/topology.h \
-  include/asm-generic/topology.h \
-  arch/x86/include/asm/mmu.h \
-    $(wildcard include/config/modify/ldt/syscall.h) \
-  arch/x86/include/asm/realmode.h \
-    $(wildcard include/config/acpi/sleep.h) \
-  arch/x86/include/asm/io.h \
-    $(wildcard include/config/mtrr.h) \
-  arch/x86/include/generated/asm/early_ioremap.h \
-  include/asm-generic/early_ioremap.h \
-    $(wildcard include/config/generic/early/ioremap.h) \
-  include/asm-generic/iomap.h \
-    $(wildcard include/config/has/ioport/map.h) \
-    $(wildcard include/config/pci.h) \
-    $(wildcard include/config/generic/iomap.h) \
-  include/asm-generic/pci_iomap.h \
-    $(wildcard include/config/no/generic/pci/ioport/map.h) \
-    $(wildcard include/config/generic/pci/iomap.h) \
-  include/xen/xen.h \
-    $(wildcard include/config/xen/dom0.h) \
-    $(wildcard include/config/xen/pvh.h) \
-  include/xen/interface/xen.h \
-  arch/x86/include/asm/xen/interface.h \
-  arch/x86/include/asm/xen/interface_64.h \
-  arch/x86/include/asm/pvclock-abi.h \
-  arch/x86/include/asm/xen/hypervisor.h \
-  include/xen/features.h \
-  include/xen/interface/features.h \
-  arch/x86/include/asm/pvclock.h \
-  include/linux/clocksource.h \
-    $(wildcard include/config/arch/clocksource/data.h) \
-    $(wildcard include/config/clocksource/watchdog.h) \
-    $(wildcard include/config/clksrc/probe.h) \
-  arch/x86/include/asm/clocksource.h \
-  arch/x86/include/uapi/asm/vsyscall.h \
-  include/asm-generic/fixmap.h \
-  arch/x86/include/asm/idle.h \
-  arch/x86/include/asm/io_apic.h \
-  arch/x86/include/asm/irq_vectors.h \
-    $(wildcard include/config/have/kvm.h) \
-    $(wildcard include/config/pci/msi.h) \
   include/linux/topology.h \
     $(wildcard include/config/use/percpu/numa/node/id.h) \
     $(wildcard include/config/sched/smt.h) \
@@ -516,16 +377,26 @@ deps_/home/surjith/Downloads/Linux_3.x.x_VCP_Driver_Source/cp210x.o := \
     $(wildcard include/config/up/late/init.h) \
   include/linux/llist.h \
     $(wildcard include/config/arch/have/nmi/safe/cmpxchg.h) \
+  arch/arm/include/asm/smp.h \
   include/linux/percpu.h \
     $(wildcard include/config/need/per/cpu/embed/first/chunk.h) \
     $(wildcard include/config/need/per/cpu/page/first/chunk.h) \
+    $(wildcard include/config/have/setup/per/cpu/area.h) \
   include/linux/pfn.h \
+  arch/arm/include/asm/percpu.h \
+  include/asm-generic/percpu.h \
+  include/linux/percpu-defs.h \
+    $(wildcard include/config/debug/force/weak/per/cpu.h) \
+  arch/arm/include/asm/topology.h \
+    $(wildcard include/config/arm/cpu/topology.h) \
+  include/asm-generic/topology.h \
   include/linux/kmemleak.h \
     $(wildcard include/config/debug/kmemleak.h) \
   include/linux/kasan.h \
   include/linux/tty.h \
     $(wildcard include/config/tty.h) \
     $(wildcard include/config/audit.h) \
+    $(wildcard include/config/proc/fs.h) \
   include/linux/fs.h \
     $(wildcard include/config/fs/posix/acl.h) \
     $(wildcard include/config/security.h) \
@@ -535,7 +406,6 @@ deps_/home/surjith/Downloads/Linux_3.x.x_VCP_Driver_Source/cp210x.o := \
     $(wildcard include/config/epoll.h) \
     $(wildcard include/config/file/locking.h) \
     $(wildcard include/config/quota.h) \
-    $(wildcard include/config/blk/dev/loop.h) \
     $(wildcard include/config/fs/dax.h) \
     $(wildcard include/config/block.h) \
     $(wildcard include/config/migration.h) \
@@ -550,7 +420,7 @@ deps_/home/surjith/Downloads/Linux_3.x.x_VCP_Driver_Source/cp210x.o := \
     $(wildcard include/config/arch/use/cmpxchg/lockref.h) \
   include/linux/path.h \
   include/linux/stat.h \
-  arch/x86/include/uapi/asm/stat.h \
+  arch/arm/include/uapi/asm/stat.h \
   include/uapi/linux/stat.h \
   include/linux/uidgid.h \
     $(wildcard include/config/multiuser.h) \
@@ -573,6 +443,10 @@ deps_/home/surjith/Downloads/Linux_3.x.x_VCP_Driver_Source/cp210x.o := \
     $(wildcard include/config/blk/dev/integrity.h) \
   include/uapi/linux/fs.h \
   include/uapi/linux/limits.h \
+  include/uapi/linux/ioctl.h \
+  arch/arm/include/generated/asm/ioctl.h \
+  include/asm-generic/ioctl.h \
+  include/uapi/asm-generic/ioctl.h \
   include/linux/quota.h \
     $(wildcard include/config/quota/netlink/interface.h) \
   include/linux/percpu_counter.h \
@@ -585,22 +459,24 @@ deps_/home/surjith/Downloads/Linux_3.x.x_VCP_Driver_Source/cp210x.o := \
   include/linux/nfs_fs_i.h \
   include/linux/fcntl.h \
   include/uapi/linux/fcntl.h \
-  arch/x86/include/uapi/asm/fcntl.h \
+  arch/arm/include/uapi/asm/fcntl.h \
   include/uapi/asm-generic/fcntl.h \
+  include/linux/err.h \
   include/uapi/linux/major.h \
   include/uapi/linux/termios.h \
-  arch/x86/include/uapi/asm/termios.h \
+  arch/arm/include/generated/asm/termios.h \
   include/asm-generic/termios.h \
-  arch/x86/include/asm/uaccess.h \
-    $(wildcard include/config/x86/intel/usercopy.h) \
-    $(wildcard include/config/debug/strict/user/copy/checks.h) \
-  arch/x86/include/asm/smap.h \
-    $(wildcard include/config/x86/smap.h) \
-  arch/x86/include/asm/uaccess_64.h \
+  arch/arm/include/asm/uaccess.h \
+    $(wildcard include/config/have/efficient/unaligned/access.h) \
+    $(wildcard include/config/cpu/sw/domain/pan.h) \
+    $(wildcard include/config/cpu/use/domains.h) \
+    $(wildcard include/config/uaccess/with/memcpy.h) \
+  arch/arm/include/asm/domain.h \
+    $(wildcard include/config/io/36.h) \
   include/uapi/asm-generic/termios.h \
-  arch/x86/include/uapi/asm/termbits.h \
+  arch/arm/include/generated/asm/termbits.h \
   include/uapi/asm-generic/termbits.h \
-  arch/x86/include/uapi/asm/ioctls.h \
+  arch/arm/include/uapi/asm/ioctls.h \
   include/uapi/asm-generic/ioctls.h \
   include/linux/tty_driver.h \
     $(wildcard include/config/console/poll.h) \
@@ -630,62 +506,33 @@ deps_/home/surjith/Downloads/Linux_3.x.x_VCP_Driver_Source/cp210x.o := \
     $(wildcard include/config/debug/set/module/ronx.h) \
   include/linux/kmod.h \
   include/linux/elf.h \
-  arch/x86/include/asm/elf.h \
-    $(wildcard include/config/x86/x32/abi.h) \
-  arch/x86/include/asm/user.h \
-  arch/x86/include/asm/user_64.h \
-  arch/x86/include/uapi/asm/auxvec.h \
-  arch/x86/include/asm/vdso.h \
-    $(wildcard include/config/x86/x32.h) \
-  include/linux/mm_types.h \
-    $(wildcard include/config/split/ptlock/cpus.h) \
-    $(wildcard include/config/arch/enable/split/pmd/ptlock.h) \
-    $(wildcard include/config/have/cmpxchg/double.h) \
-    $(wildcard include/config/have/aligned/struct/page.h) \
-    $(wildcard include/config/transparent/hugepage.h) \
-    $(wildcard include/config/userfaultfd.h) \
-    $(wildcard include/config/aio.h) \
-    $(wildcard include/config/mmu/notifier.h) \
-  include/linux/auxvec.h \
-  include/uapi/linux/auxvec.h \
-  include/linux/uprobes.h \
-    $(wildcard include/config/uprobes.h) \
-  arch/x86/include/asm/uprobes.h \
+  arch/arm/include/asm/elf.h \
+    $(wildcard include/config/vdso.h) \
+  arch/arm/include/asm/auxvec.h \
+  arch/arm/include/uapi/asm/auxvec.h \
+  arch/arm/include/asm/vdso_datapage.h \
+  arch/arm/include/asm/user.h \
   include/uapi/linux/elf.h \
   include/uapi/linux/elf-em.h \
   include/linux/moduleparam.h \
     $(wildcard include/config/alpha.h) \
     $(wildcard include/config/ia64.h) \
     $(wildcard include/config/ppc64.h) \
+  include/linux/jump_label.h \
+    $(wildcard include/config/jump/label.h) \
+  arch/arm/include/asm/jump_label.h \
   include/linux/rbtree_latch.h \
-  arch/x86/include/asm/module.h \
-    $(wildcard include/config/m586.h) \
-    $(wildcard include/config/m586tsc.h) \
-    $(wildcard include/config/m586mmx.h) \
-    $(wildcard include/config/mcore2.h) \
-    $(wildcard include/config/m686.h) \
-    $(wildcard include/config/mpentiumii.h) \
-    $(wildcard include/config/mpentiumiii.h) \
-    $(wildcard include/config/mpentiumm.h) \
-    $(wildcard include/config/mpentium4.h) \
-    $(wildcard include/config/mk6.h) \
-    $(wildcard include/config/mk8.h) \
-    $(wildcard include/config/melan.h) \
-    $(wildcard include/config/mcrusoe.h) \
-    $(wildcard include/config/mefficeon.h) \
-    $(wildcard include/config/mwinchipc6.h) \
-    $(wildcard include/config/mwinchip3d.h) \
-    $(wildcard include/config/mcyrixiii.h) \
-    $(wildcard include/config/mviac3/2.h) \
-    $(wildcard include/config/mviac7.h) \
-    $(wildcard include/config/mgeodegx1.h) \
-    $(wildcard include/config/mgeode/lx.h) \
+  arch/arm/include/asm/module.h \
+    $(wildcard include/config/arm/unwind.h) \
+    $(wildcard include/config/arm/module/plts.h) \
   include/asm-generic/module.h \
     $(wildcard include/config/have/mod/arch/specific.h) \
     $(wildcard include/config/modules/use/elf/rel.h) \
     $(wildcard include/config/modules/use/elf/rela.h) \
   include/linux/usb.h \
     $(wildcard include/config/usb/mon.h) \
+    $(wildcard include/config/pm.h) \
+    $(wildcard include/config/acpi.h) \
     $(wildcard include/config/usb/led/trig.h) \
   include/linux/mod_devicetable.h \
   include/linux/uuid.h \
@@ -700,16 +547,22 @@ deps_/home/surjith/Downloads/Linux_3.x.x_VCP_Driver_Source/cp210x.o := \
     $(wildcard include/config/of.h) \
     $(wildcard include/config/devtmpfs.h) \
     $(wildcard include/config/sysfs/deprecated.h) \
+  include/linux/ioport.h \
   include/linux/klist.h \
   include/linux/pinctrl/devinfo.h \
   include/linux/pinctrl/consumer.h \
   include/linux/seq_file.h \
   include/linux/pinctrl/pinctrl-state.h \
+  include/linux/pm.h \
+    $(wildcard include/config/vt/console/sleep.h) \
+    $(wildcard include/config/pm/clk.h) \
+    $(wildcard include/config/pm/generic/domains.h) \
   include/linux/ratelimit.h \
-  arch/x86/include/asm/device.h \
-    $(wildcard include/config/x86/dev/dma/ops.h) \
-    $(wildcard include/config/intel/iommu.h) \
-    $(wildcard include/config/amd/iommu.h) \
+  arch/arm/include/asm/device.h \
+    $(wildcard include/config/dmabounce.h) \
+    $(wildcard include/config/iommu/api.h) \
+    $(wildcard include/config/arm/dma/use/iommu.h) \
+    $(wildcard include/config/arch/omap.h) \
   include/linux/pm_wakeup.h \
   include/uapi/linux/usb/ch9.h \
     $(wildcard include/config/size.h) \
@@ -718,8 +571,7 @@ deps_/home/surjith/Downloads/Linux_3.x.x_VCP_Driver_Source/cp210x.o := \
     $(wildcard include/config/att/wakeup.h) \
     $(wildcard include/config/att/battery.h) \
   include/linux/delay.h \
-  arch/x86/include/asm/delay.h \
-  include/asm-generic/delay.h \
+  arch/arm/include/asm/delay.h \
   include/linux/interrupt.h \
     $(wildcard include/config/irq/forced/threading.h) \
     $(wildcard include/config/generic/irq/probe.h) \
@@ -737,36 +589,11 @@ deps_/home/surjith/Downloads/Linux_3.x.x_VCP_Driver_Source/cp210x.o := \
   include/linux/context_tracking_state.h \
     $(wildcard include/config/context/tracking.h) \
   include/linux/static_key.h \
-  arch/x86/include/asm/hardirq.h \
-    $(wildcard include/config/x86/thermal/vector.h) \
-    $(wildcard include/config/x86/mce/threshold.h) \
-    $(wildcard include/config/x86/mce/amd.h) \
-    $(wildcard include/config/hyperv.h) \
-  include/linux/irq.h \
-    $(wildcard include/config/irq/domain/hierarchy.h) \
-    $(wildcard include/config/generic/pending/irq.h) \
-    $(wildcard include/config/hardirqs/sw/resend.h) \
-    $(wildcard include/config/generic/irq/legacy/alloc/hwirq.h) \
-    $(wildcard include/config/generic/irq/legacy.h) \
-  include/linux/irqhandler.h \
-  include/linux/io.h \
-    $(wildcard include/config/have/arch/huge/vmap.h) \
-  arch/x86/include/asm/irq.h \
-  arch/x86/include/asm/irq_regs.h \
-  include/linux/irqdesc.h \
-    $(wildcard include/config/irq/preflow/fasteoi.h) \
+  arch/arm/include/asm/hardirq.h \
+  arch/arm/include/asm/irq.h \
     $(wildcard include/config/sparse/irq.h) \
-    $(wildcard include/config/handle/domain/irq.h) \
-  arch/x86/include/asm/hw_irq.h \
-    $(wildcard include/config/hpet/timer.h) \
-    $(wildcard include/config/dmar/table.h) \
-    $(wildcard include/config/ht/irq.h) \
-    $(wildcard include/config/x86/uv.h) \
-  include/linux/profile.h \
-    $(wildcard include/config/profiling.h) \
-  arch/x86/include/asm/sections.h \
-    $(wildcard include/config/debug/rodata.h) \
-  include/asm-generic/sections.h \
+    $(wildcard include/config/multi/irq/handler.h) \
+  include/linux/irq_cpustat.h \
   include/linux/hrtimer.h \
     $(wildcard include/config/high/res/timers.h) \
     $(wildcard include/config/time/low/res.h) \
@@ -795,6 +622,7 @@ deps_/home/surjith/Downloads/Linux_3.x.x_VCP_Driver_Source/cp210x.o := \
     $(wildcard include/config/cgroup/sched.h) \
     $(wildcard include/config/blk/dev/io/trace.h) \
     $(wildcard include/config/compat/brk.h) \
+    $(wildcard include/config/cc/stackprotector.h) \
     $(wildcard include/config/sysvipc.h) \
     $(wildcard include/config/auditsyscall.h) \
     $(wildcard include/config/rt/mutexes.h) \
@@ -806,6 +634,7 @@ deps_/home/surjith/Downloads/Linux_3.x.x_VCP_Driver_Source/cp210x.o := \
     $(wildcard include/config/fault/injection.h) \
     $(wildcard include/config/latencytop.h) \
     $(wildcard include/config/function/graph/tracer.h) \
+    $(wildcard include/config/uprobes.h) \
     $(wildcard include/config/bcache.h) \
     $(wildcard include/config/arch/wants/dynamic/task/struct.h) \
     $(wildcard include/config/have/unstable/sched/clock.h) \
@@ -815,29 +644,47 @@ deps_/home/surjith/Downloads/Linux_3.x.x_VCP_Driver_Source/cp210x.o := \
   include/linux/sched/prio.h \
   include/linux/plist.h \
     $(wildcard include/config/debug/pi/list.h) \
+  include/linux/mm_types.h \
+    $(wildcard include/config/split/ptlock/cpus.h) \
+    $(wildcard include/config/arch/enable/split/pmd/ptlock.h) \
+    $(wildcard include/config/have/cmpxchg/double.h) \
+    $(wildcard include/config/have/aligned/struct/page.h) \
+    $(wildcard include/config/transparent/hugepage.h) \
+    $(wildcard include/config/userfaultfd.h) \
+    $(wildcard include/config/pgtable/levels.h) \
+    $(wildcard include/config/aio.h) \
+    $(wildcard include/config/mmu/notifier.h) \
+    $(wildcard include/config/x86/intel/mpx.h) \
+  include/linux/auxvec.h \
+  include/uapi/linux/auxvec.h \
+  include/linux/uprobes.h \
+  arch/arm/include/asm/mmu.h \
+    $(wildcard include/config/cpu/has/asid.h) \
   include/linux/cputime.h \
-  arch/x86/include/generated/asm/cputime.h \
+  arch/arm/include/generated/asm/cputime.h \
   include/asm-generic/cputime.h \
   include/asm-generic/cputime_jiffies.h \
   include/linux/sem.h \
   include/uapi/linux/sem.h \
   include/linux/ipc.h \
   include/uapi/linux/ipc.h \
-  arch/x86/include/uapi/asm/ipcbuf.h \
+  arch/arm/include/generated/asm/ipcbuf.h \
   include/uapi/asm-generic/ipcbuf.h \
-  arch/x86/include/uapi/asm/sembuf.h \
+  arch/arm/include/generated/asm/sembuf.h \
+  include/uapi/asm-generic/sembuf.h \
   include/linux/shm.h \
   include/uapi/linux/shm.h \
-  arch/x86/include/uapi/asm/shmbuf.h \
+  arch/arm/include/generated/asm/shmbuf.h \
   include/uapi/asm-generic/shmbuf.h \
-  arch/x86/include/asm/shmparam.h \
+  arch/arm/include/asm/shmparam.h \
   include/linux/signal.h \
     $(wildcard include/config/old/sigaction.h) \
   include/uapi/linux/signal.h \
-  arch/x86/include/asm/signal.h \
-  arch/x86/include/uapi/asm/signal.h \
+  arch/arm/include/asm/signal.h \
+  arch/arm/include/uapi/asm/signal.h \
   include/uapi/asm-generic/signal-defs.h \
-  arch/x86/include/uapi/asm/siginfo.h \
+  arch/arm/include/uapi/asm/sigcontext.h \
+  arch/arm/include/generated/asm/siginfo.h \
   include/asm-generic/siginfo.h \
   include/uapi/asm-generic/siginfo.h \
   include/linux/proportions.h \
@@ -847,20 +694,17 @@ deps_/home/surjith/Downloads/Linux_3.x.x_VCP_Driver_Source/cp210x.o := \
     $(wildcard include/config/seccomp/filter.h) \
     $(wildcard include/config/checkpoint/restore.h) \
   include/uapi/linux/seccomp.h \
-  arch/x86/include/asm/seccomp.h \
-  arch/x86/include/asm/unistd.h \
-  arch/x86/include/uapi/asm/unistd.h \
-  arch/x86/include/generated/uapi/asm/unistd_64.h \
-  arch/x86/include/generated/asm/unistd_64_x32.h \
-  arch/x86/include/asm/ia32_unistd.h \
-  arch/x86/include/generated/asm/unistd_32_ia32.h \
+  arch/arm/include/generated/asm/seccomp.h \
   include/asm-generic/seccomp.h \
   include/uapi/linux/unistd.h \
+  arch/arm/include/asm/unistd.h \
+    $(wildcard include/config/oabi/compat.h) \
+  arch/arm/include/uapi/asm/unistd.h \
   include/linux/rtmutex.h \
     $(wildcard include/config/debug/rt/mutexes.h) \
   include/linux/resource.h \
   include/uapi/linux/resource.h \
-  arch/x86/include/uapi/asm/resource.h \
+  arch/arm/include/generated/asm/resource.h \
   include/asm-generic/resource.h \
   include/uapi/asm-generic/resource.h \
   include/linux/task_io_accounting.h \
@@ -899,26 +743,66 @@ deps_/home/surjith/Downloads/Linux_3.x.x_VCP_Driver_Source/cp210x.o := \
     $(wildcard include/config/debug/sg.h) \
     $(wildcard include/config/need/sg/dma/length.h) \
   include/linux/mm.h \
+    $(wildcard include/config/mem/soft/dirty.h) \
+    $(wildcard include/config/x86.h) \
     $(wildcard include/config/ppc.h) \
     $(wildcard include/config/parisc.h) \
     $(wildcard include/config/metag.h) \
     $(wildcard include/config/shmem.h) \
     $(wildcard include/config/debug/vm/rb.h) \
     $(wildcard include/config/debug/pagealloc.h) \
+    $(wildcard include/config/hibernation.h) \
     $(wildcard include/config/hugetlbfs.h) \
   include/linux/debug_locks.h \
     $(wildcard include/config/debug/locking/api/selftests.h) \
+  include/linux/range.h \
   include/linux/page_ext.h \
     $(wildcard include/config/idle/page/tracking.h) \
     $(wildcard include/config/page/owner.h) \
   include/linux/stacktrace.h \
     $(wildcard include/config/stacktrace.h) \
     $(wildcard include/config/user/stacktrace/support.h) \
-  arch/x86/include/asm/pgtable.h \
-    $(wildcard include/config/debug/wx.h) \
-    $(wildcard include/config/have/arch/soft/dirty.h) \
-  arch/x86/include/asm/pgtable_64.h \
+  arch/arm/include/asm/pgtable.h \
+    $(wildcard include/config/highpte.h) \
+  arch/arm/include/asm/proc-fns.h \
+  arch/arm/include/asm/glue-proc.h \
+    $(wildcard include/config/cpu/arm7tdmi.h) \
+    $(wildcard include/config/cpu/arm720t.h) \
+    $(wildcard include/config/cpu/arm740t.h) \
+    $(wildcard include/config/cpu/arm9tdmi.h) \
+    $(wildcard include/config/cpu/arm920t.h) \
+    $(wildcard include/config/cpu/arm922t.h) \
+    $(wildcard include/config/cpu/arm925t.h) \
+    $(wildcard include/config/cpu/arm926t.h) \
+    $(wildcard include/config/cpu/arm940t.h) \
+    $(wildcard include/config/cpu/arm946e.h) \
+    $(wildcard include/config/cpu/arm1020.h) \
+    $(wildcard include/config/cpu/arm1020e.h) \
+    $(wildcard include/config/cpu/arm1022.h) \
+    $(wildcard include/config/cpu/arm1026.h) \
+    $(wildcard include/config/cpu/mohawk.h) \
+    $(wildcard include/config/cpu/feroceon.h) \
+    $(wildcard include/config/cpu/v6k.h) \
+    $(wildcard include/config/cpu/pj4b.h) \
+    $(wildcard include/config/cpu/v7.h) \
+  include/asm-generic/pgtable-nopud.h \
+  arch/arm/include/asm/pgtable-hwdef.h \
+  arch/arm/include/asm/pgtable-2level-hwdef.h \
+  arch/arm/include/asm/tlbflush.h \
+    $(wildcard include/config/smp/on/up.h) \
+    $(wildcard include/config/cpu/tlb/v4wt.h) \
+    $(wildcard include/config/cpu/tlb/fa.h) \
+    $(wildcard include/config/cpu/tlb/v4wbi.h) \
+    $(wildcard include/config/cpu/tlb/feroceon.h) \
+    $(wildcard include/config/cpu/tlb/v4wb.h) \
+    $(wildcard include/config/cpu/tlb/v6.h) \
+    $(wildcard include/config/cpu/tlb/v7.h) \
+    $(wildcard include/config/arm/errata/720789.h) \
+    $(wildcard include/config/arm/errata/798181.h) \
+  arch/arm/include/asm/pgtable-2level.h \
   include/asm-generic/pgtable.h \
+    $(wildcard include/config/have/arch/soft/dirty.h) \
+    $(wildcard include/config/have/arch/huge/vmap.h) \
   include/linux/page-flags.h \
     $(wildcard include/config/arch/uses/pg/uncached.h) \
     $(wildcard include/config/memory/failure.h) \
@@ -932,7 +816,25 @@ deps_/home/surjith/Downloads/Linux_3.x.x_VCP_Driver_Source/cp210x.o := \
   include/linux/vm_event_item.h \
     $(wildcard include/config/memory/balloon.h) \
     $(wildcard include/config/balloon/compaction.h) \
+  arch/arm/include/asm/io.h \
+    $(wildcard include/config/pci.h) \
+    $(wildcard include/config/need/mach/io/h.h) \
+    $(wildcard include/config/pcmcia/soc/common.h) \
+    $(wildcard include/config/isa.h) \
+    $(wildcard include/config/pccard.h) \
+  include/asm-generic/pci_iomap.h \
+    $(wildcard include/config/no/generic/pci/ioport/map.h) \
+    $(wildcard include/config/generic/pci/iomap.h) \
+  include/xen/xen.h \
+    $(wildcard include/config/xen.h) \
+    $(wildcard include/config/xen/dom0.h) \
+    $(wildcard include/config/xen/pvh.h) \
+  arch/arm/mach-bcm2709/include/mach/io.h \
+  include/asm-generic/io.h \
+    $(wildcard include/config/generic/iomap.h) \
+    $(wildcard include/config/has/ioport/map.h) \
+  include/linux/vmalloc.h \
 
-/home/surjith/Downloads/Linux_3.x.x_VCP_Driver_Source/cp210x.o: $(deps_/home/surjith/Downloads/Linux_3.x.x_VCP_Driver_Source/cp210x.o)
+/home/pi/LPEDT/thread_application/Linux_3.x.x_VCP_Driver_Source/cp210x.o: $(deps_/home/pi/LPEDT/thread_application/Linux_3.x.x_VCP_Driver_Source/cp210x.o)
 
-$(deps_/home/surjith/Downloads/Linux_3.x.x_VCP_Driver_Source/cp210x.o):
+$(deps_/home/pi/LPEDT/thread_application/Linux_3.x.x_VCP_Driver_Source/cp210x.o):
