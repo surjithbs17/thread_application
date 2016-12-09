@@ -58,29 +58,38 @@ class Echo(protocol.Protocol):
 			if parsed_data['DEVICE_ID'] is ('0' or '1') :
 				#Add device ip or id to send your
 				if parsed_data['ON_OFF'] is 'ON':
-					if parsed_data
-					rpi "0 3 1 2 0 0 0"		
+					send_string = "\r\n"+'rpi "0 3 1 2 0 0'+ parsed_data['DEVICE_ID']+'"' + "\r\n"
+					print send_string
+					port.write(send_string)		
 					#send ON command deviceid
 				elif parsed_data['ON_OFF'] is 'OFF':
+					send_string = "\r\n"+'rpi "0 3 1 2 0 1'+ parsed_data['DEVICE_ID']+'"' + "\r\n"
+					print send_string
+					port.write(send_string)
 				#send off command to device id 
 		elif "LED" in data:
-                        # ACTUATE <DEVICE_ID> <SENSORID> <ON/OFF>
-                        parsed_data = parse{"LED {DEVICE_ID} {ON_OFF}",data}
-                        if parsed_data['DEVICE_ID'] is ('0' or '1') :
-                                #Add device ip or id to send your
-                                if parsed_data['ON_OFF'] is 'ON':
-                                        #send ON command deviceid
-                                elif parsed_data['ON_OFF'] is 'OFF':
-                                        #send off command to device id
+             # ACTUATE <DEVICE_ID> <SENSORID> <ON/OFF>
+            parsed_data = parse{"LED {DEVICE_ID} {ON_OFF}",data}
+            if parsed_data['DEVICE_ID'] is ('0' or '1') :
+                    #Add device ip or id to send your
+                    if parsed_data['ON_OFF'] is 'ON':
+                    	send_string = "\r\n"+'rpi "0 3 1 3 0 0'+ parsed_data['DEVICE_ID']+'"' + "\r\n"
+						print send_string
+						port.write(send_string)
+                            #send ON command deviceid
+                    elif parsed_data['ON_OFF'] is 'OFF':
+                        send_string = "\r\n"+'rpi "0 3 1 3 0 1'+ parsed_data['DEVICE_ID']+'"' + "\r\n"
+						print send_string
+						port.write(send_string)
+                        
+                        #send off command to device id
 		 elif "READ" in data:
-                        # ACTUATE <Device if
-                        parsed_data = parse{"ACTUATE {DEVICE_ID} {ON_OFF}",data}
-                        if parsed_data['DEVICE_ID'] is ('0' or '1') :
-                                #Add device ip or id to send your
-                                if parsed_data['ON_OFF'] is 'ON':
-                                        #send ON command deviceid
-                                elif parsed_data['ON_OFF'] is 'OFF':
-                                        #send off command to device id
+            # ACTUATE <Device if
+            parsed_data = parse{"READ {DEVICE_ID}",data}
+            if parsed_data['DEVICE_ID'] is ('0' or '1') :
+                    send_string = "\r\n"+'rpi "0 0 0 0 0 0'+ parsed_data['DEVICE_ID']+'"' + "\r\n"
+					print send_string
+					port.write(send_string)
 '''
  *Start Byte|Main Source    |Command      |interface    |sub interface     |interface Id        |IP         |data                |STOP
 	$        0 - Ras Pi	      Read - 0     Sensor -0	 Sensor_temp -0     Sensor#0	        <Optional>   <Sensor Read Data>   '#'
