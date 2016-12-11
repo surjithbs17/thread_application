@@ -150,7 +150,7 @@ class Echo(protocol.Protocol):
 						break
 					except TypeError:
 						print "Type Error"
-					#self.transport.write(to_app_reply)
+						self.transport.write("")
 				
 		
 
