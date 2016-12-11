@@ -45,6 +45,7 @@ class Echo(protocol.Protocol):
 				if "MFPI:BOUND" in msg_from_server:
 					reply_1 = parse("MFPI:BOUND {DEVICE_ID}",msg_from_server)
 					print "Inside Bound"
+					self.transport.write('Bound Success 1 "BLBTUCB0"')
 					break
 
 			port.write(expect_string_2)
@@ -55,6 +56,7 @@ class Echo(protocol.Protocol):
 				if "MFPI:BOUND" in msg_from_server:
 					reply_2 = parse("MFPI:BOUND {DEVICE_ID}",msg_from_server)
 					print "Inside Second Bound"
+					self.transport.write('Bound Success 1 "4GBTUCB0"')
 					break
 
 			reply_string = "DEVICE 1 Paired as %s \n DEVICE 2 Paired as %s\n"%(reply_1['DEVICE_ID'],reply_2['DEVICE_ID']) 
@@ -140,9 +142,9 @@ class Echo(protocol.Protocol):
 				print msg_from_server
 				if "MFPI" in msg_from_server:
 					try:
-						msg_string = parse("MFPI:$ 2 0 0 0 0 {DATA6} {DEVICE_ID} # ",msg_from_server)
-						#print msg_string['DATA']
-						to_app_reply = "Sensor Data %s \n%s"%(parsed_data['TYPE'],msg_string['DATA'])
+						msg_string = parse("MFPI:$ 2 0 0 0 0 {DATA} {DEVICE_ID} # ",msg_from_server)
+						print msg_string['DATA']
+						to_app_reply = "Sensor Data %s \n%s \n%s"%(parsed_data['TYPE'],msg_string['DATA'],msg_string['DEVICE_ID'])
 						print to_app_reply
 						self.transport.write(to_app_reply)
 						break
