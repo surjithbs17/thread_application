@@ -3,7 +3,7 @@ from parse import *
 
 import serial 
 import time 
-port = serial.Serial("/dev/ttyACM0",baudrate=115200, timeout=100.0)
+port = serial.Serial("/dev/ttyACM1",baudrate=115200, timeout=100.0)
 '''
 class check:
 	
@@ -139,12 +139,17 @@ class Echo(protocol.Protocol):
 				#msg_from_server = readlineCR()
 				print msg_from_server
 				if "MFPI" in msg_from_server:
-					msg_string = parse("MFPI:$ 2 {DATA2} {DATA3} {DATA4} {DATA5} {DATA6} {DEVICE_ID} # ",msg_from_server)
-					#print msg_string['DATA']
-					to_app_reply = "Sensor Data %s \n%s"%(parsed_data['TYPE'],msg_string['DATA'])
-					print to_app_reply
-					self.transport.write(to_app_reply)
-					break
+					try:
+						msg_string = parse("MFPI:$ 2 0 0 0 0 {DATA6} {DEVICE_ID} # ",msg_from_server)
+						#print msg_string['DATA']
+						to_app_reply = "Sensor Data %s \n%s"%(parsed_data['TYPE'],msg_string['DATA'])
+						print to_app_reply
+						self.transport.write(to_app_reply)
+						break
+					except TypeError:
+						print "Type Error"
+					#self.transport.write(to_app_reply)
+				
 		
 
 class EchoFactory(protocol.Factory):
