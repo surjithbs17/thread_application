@@ -3,7 +3,7 @@ from parse import *
 
 import serial 
 import time 
-port = serial.Serial("/dev/ttyUSB0",baudrate=115200, timeout=100.0)
+port = serial.Serial("/dev/ttyACM1",baudrate=115200, timeout=100.0)
 '''
 class check:
 	
@@ -19,7 +19,7 @@ port = check()
 '''
 
 
-def readlineCR(port):
+def readlineCR():
 	rv = port.readline()
 	return rv
 
@@ -29,10 +29,10 @@ class Echo(protocol.Protocol):
  		print data
  		#parsed_data
  		if 'ADD' in data:
-			#port.write("\n")
+			port.write("\n")
 			time.sleep(0.1)
-			expect_string_1 = 'expect "BLBTUCB0"\n'
-			expect_string_2 = 'expect "4GBTUCB0"\n'
+			expect_string_1 = 'expect "BLBTUCB0"\r\n'
+			expect_string_2 = 'expect "4GBTUCB0"\r\n'
 			reply_1 = dict()
 			reply_2 = dict()
 
@@ -41,15 +41,20 @@ class Echo(protocol.Protocol):
 			port.write(expect_string_1)
 			while True:
 				msg_from_server = readlineCR()
+				print msg_from_server
 				if "MFPI:BOUND" in msg_from_server:
 					reply_1 = parse("MFPI:BOUND {DEVICE_ID}",msg_from_server)
+					print "Inside Bound"
 					break
 
 			port.write(expect_string_2)
 			while True:
 				msg_from_server = readlineCR()
+				print msg_from_server
+
 				if "MFPI:BOUND" in msg_from_server:
 					reply_2 = parse("MFPI:BOUND {DEVICE_ID}",msg_from_server)
+					print "Inside Second Bound"
 					break
 
 			reply_string = "DEVICE 1 Paired as %s \n DEVICE 2 Paired as %s\n"%(reply_1['DEVICE_ID'],reply_2['DEVICE_ID']) 
@@ -127,17 +132,24 @@ class Echo(protocol.Protocol):
 					print send_string
 					port.write(send_string)
 
+#MFPI:$ 2 0 0 0 0 21 1 #
 
 			while True:
+				msg_from_server = readlineCR()
 				#msg_from_server = readlineCR()
-				msg_from_server = "MFPI:$ 2 0 0 0 0 28 0 #"
+				print msg_from_server
 				if "MFPI" in msg_from_server:
-					msg_string = parse("MFPI:$ 2 0 0 0 0 {DATA} 0 #",msg_from_server)
-					print msg_string['DATA']
-					to_app_reply = "Sensor Data %s \n%s"%(parsed_data['TYPE'],msg_string['DATA'])
-					print to_app_reply
-					self.transport.write(to_app_reply)
-					break
+					try:
+						msg_string = parse("MFPI:$ 2 0 0 0 0 {DATA6} {DEVICE_ID} # ",msg_from_server)
+						#print msg_string['DATA']
+						to_app_reply = "Sensor Data %s \n%s"%(parsed_data['TYPE'],msg_string['DATA'])
+						print to_app_reply
+						self.transport.write(to_app_reply)
+						break
+					except TypeError:
+						print "Type Error"
+					#self.transport.write(to_app_reply)
+				
 		
 
 class EchoFactory(protocol.Factory):
