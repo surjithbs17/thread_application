@@ -51,6 +51,15 @@ class EchoClient(protocol.Protocol):
         global connection 
         connection = self.transport
         print connection
+        content = Button(text=connection)
+    	popup = Popup(content=content, auto_dismiss=False)
+
+# bind the on_press event of the button to the dismiss function
+    	content.bind(on_press=popup.dismiss)
+
+# open the popup
+    	popup.open()
+
 
 
     def dataReceived(self, data):
