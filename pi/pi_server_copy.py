@@ -126,11 +126,11 @@ class Echo(protocol.Protocol):
 		 	print parsed_data['TYPE']
 		 	if (parsed_data['DEVICE_ID'] is ('0')) or (parsed_data['DEVICE_ID'] is ('1')) :
 		 		if 'TEMP' in parsed_data['TYPE']:
-		 			send_string = "\r\n"+'rpi "$ 0 0 0 0 0 0 '+ parsed_data['DEVICE_ID']+'#"' + "\r\n"
+		 			send_string = "\r\n"+'rpi "$ 0 0 0 0 0 0 '+ parsed_data['DEVICE_ID']+' #"' + "\r\n"
 		 			print send_string
 		 			port.write(send_string)
 				elif 'HUMI' in parsed_data['TYPE']:
-					send_string = "\r\n"+'rpi "$ 0 0 0 1 0 0 '+ parsed_data['DEVICE_ID']+'#"' + "\r\n"
+					send_string = "\r\n"+'rpi "$ 0 0 0 1 0 0 '+ parsed_data['DEVICE_ID']+' #"' + "\r\n"
 					print send_string
 					port.write(send_string)
 
