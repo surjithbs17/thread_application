@@ -144,17 +144,18 @@ class Echo(protocol.Protocol):
 					try:
 						msg_string = parse('MFPI: {DATA} {DEVICE_ID}',msg_from_server)
 						print msg_string['DATA']
-						to_app_reply = "Sensor Data %s \n%s \n%s"%(parsed_data['TYPE'],msg_string['DATA'],msg_string['DEVICE_ID'])
+						if 'TEMP' in parsed_data['TYPE']:
+							to_app_reply = "Sensor Data %s \n%s Degree Celcius"%(parsed_data['TYPE'],msg_string['DATA'],msg_string['DEVICE_ID'])
+						elif 'HUMI' in parsed_data['TYPE']:
+							to_app_reply = "Sensor Data %s \n%s % "%(parsed_data['TYPE'],msg_string['DATA'],msg_string['DEVICE_ID'])
 						print to_app_reply
 						self.transport.write(to_app_reply)
 						break
 					except TypeError:
 						print "Type Error"
-						self.transport.write("")
+						self.transport.write("ERROR")
 						break
 				
-		
-
 class EchoFactory(protocol.Factory):
 	def buildProtocol(self, addr):
  		return Echo()
