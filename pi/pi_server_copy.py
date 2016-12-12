@@ -145,9 +145,9 @@ class Echo(protocol.Protocol):
 						msg_string = parse('MFPI: {DATA} {DEVICE_ID}',msg_from_server)
 						print msg_string['DATA']
 						if 'TEMP' in parsed_data['TYPE']:
-							to_app_reply = "Sensor Data %s \n%s Degree Celcius"%(parsed_data['TYPE'],msg_string['DATA'],msg_string['DEVICE_ID'])
+							to_app_reply = "Sensor Data %s \n%s Degree Celcius"%(parsed_data['TYPE'],msg_string['DATA'])
 						elif 'HUMI' in parsed_data['TYPE']:
-							to_app_reply = "Sensor Data %s \n%s % "%(parsed_data['TYPE'],msg_string['DATA'],msg_string['DEVICE_ID'])
+							to_app_reply = "Sensor Data %s \n%s % "%(parsed_data['TYPE'],msg_string['DATA'])
 						print to_app_reply
 						self.transport.write(to_app_reply)
 						break
