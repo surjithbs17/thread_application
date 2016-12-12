@@ -142,7 +142,7 @@ class Echo(protocol.Protocol):
 				print msg_from_server
 				if "MFPI" in msg_from_server:
 					try:
-						msg_string = parse('MFPI:$ 2 0 0 0 0 {DATA} {DEVICE_ID} #',msg_from_server)
+						msg_string = parse('MFPI: {DATA} {DEVICE_ID}',msg_from_server)
 						print msg_string['DATA']
 						to_app_reply = "Sensor Data %s \n%s \n%s"%(parsed_data['TYPE'],msg_string['DATA'],msg_string['DEVICE_ID'])
 						print to_app_reply
